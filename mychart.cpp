@@ -9,6 +9,9 @@ myChart::myChart(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    yNumMax=0;
+    yNumMin=10000000000000000;
+
     chart = new QChart();
     chart->legend()->hide();
     chart->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
@@ -53,6 +56,11 @@ void myChart::setTitle(QString str)
 void myChart::addData(double t, double data)
 {
     mySeries->append(t, data);
+    if(y->max()<data) yNumMax=data;
+    else yNumMax=y->max();
+    if(y->min()>data) yNumMin=data;
+    else yNumMin=y->min();
+    y->setRange(yNumMin,yNumMax);
     double scrollNum = chart->plotArea().width()/(x->max()-x->min());
     if(t>x->max()){
         chart->scroll((t-x->max())*scrollNum, 0);
@@ -78,8 +86,7 @@ void myChart::setXNumbers(double num)
 
 void myChart::setYNumbers(double num)
 {
-    if(num*3<0.000001) y->setRange(0, 0.5);
-    else y->setRange(0, num*3);
+    y->setRange(0.999999*num, 1.000001*num);
 }
 
 void myChart::setMaxDataPoint(double num)

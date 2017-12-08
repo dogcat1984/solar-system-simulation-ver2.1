@@ -19,10 +19,10 @@ void chartPanel::addChart(Planet *p)
     myChart *temp = new myChart(this);
     temp->setTitle(p->getName());
     temp->setXText("Time");
-    temp->setYText("Velocity");
-    temp->addData(0, sqrt(pow(p->getVx(),2)+pow(p->getVy(),2)));
+    temp->setYText("Velocity");   
     temp->setYNumbers(sqrt(pow(p->getVx(),2)+pow(p->getVy(),2)));
     temp->setXNumbers(p->getXNumbers());
+    temp->addData(0, sqrt(pow(p->getVx(),2)+pow(p->getVy(),2)));
     temp->setMaxDataPoint(p->getShownDataPoints());
     list<<temp;
     layOutChart(temp);

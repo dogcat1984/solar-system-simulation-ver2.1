@@ -46,6 +46,9 @@ private:
     int yNumbers;
     int maxDataPoints;
 
+    double yNumMax;
+    double yNumMin;
+
     QAction *changeYRange;
     QAction *changeXRange;
     QAction *changeShownData;
