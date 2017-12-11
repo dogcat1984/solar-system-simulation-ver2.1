@@ -9,9 +9,6 @@ myChart::myChart(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    yNumMax=0;
-    yNumMin=10000000000000000;
-
     chart = new QChart();
     chart->legend()->hide();
     chart->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
@@ -77,6 +74,11 @@ void myChart::setXText(QString str)
 void myChart::setYText(QString str)
 {
     chart->axisY()->setTitleText(str);
+}
+
+void myChart::initialYRange(double num)
+{
+    yNumMax=yNumMin=num;
 }
 
 void myChart::setXNumbers(double num)
