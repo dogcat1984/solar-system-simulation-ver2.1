@@ -22,6 +22,7 @@ void chartPanel::addChart(Planet *p)
     temp->setYText("Velocity");   
     temp->setYNumbers(sqrt(pow(p->getVx(),2)+pow(p->getVy(),2)));
     temp->setXNumbers(p->getXNumbers());
+    temp->initialYRange(sqrt(pow(p->getVx(),2)+pow(p->getVy(),2)));
     temp->addData(0, sqrt(pow(p->getVx(),2)+pow(p->getVy(),2)));
     temp->setMaxDataPoint(p->getShownDataPoints());
     list<<temp;
