@@ -22,6 +22,7 @@ public:
     void addData(double t, double data);
     void setXText(QString str);
     void setYText(QString str);
+    void initialYRange(double num);
 
     void setXNumbers(double num);
     void setYNumbers(double num);
