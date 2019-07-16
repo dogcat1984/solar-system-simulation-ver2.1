@@ -31,7 +31,7 @@ void PlanetEdit::setValue()
     myPlanet->setFixedPosition(ui->setFixedPosition->isChecked());
     myPlanet->setShowPath(ui->showPath->isChecked());
     myPlanet->setShowVelocityCurve(ui->showVelocityCurve->isChecked());
-    myPlanet->setPos(ui->Px->value(),-ui->Py->value());
+    myPlanet->setPos(ui->Px->value(),ui->Py->value());
     myPlanet->setVx(ui->Vx->value());
     myPlanet->setVy(ui->Vy->value());
     myPlanet->setXNumbers(ui->XNumbers->value());
@@ -51,7 +51,7 @@ void PlanetEdit::readValue()
     ui->showPath->setChecked(myPlanet->getShowPath());
     ui->showVelocityCurve->setChecked(myPlanet->getShowVelocityCurve());
     ui->Px->setValue(myPlanet->pos().x());
-    ui->Py->setValue(-myPlanet->pos().y());
+    ui->Py->setValue(myPlanet->pos().y());
     ui->Vx->setValue(myPlanet->getVx());
     ui->Vy->setValue(myPlanet->getVy());
     ui->XNumbers->setValue(myPlanet->getXNumbers());
