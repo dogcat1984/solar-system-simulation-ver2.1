@@ -29,7 +29,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
 
      ~MainWindow();
 
@@ -68,6 +68,8 @@ private:
 
     QList<QAction*> actionList;
 
+    QAction *newFile;
+    QAction *saveFile;
     QAction *saveFileAs;
     QAction *openFile;
     QAction *addPlanet;

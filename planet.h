@@ -12,27 +12,27 @@ public:
     Planet();    
 
     void setName(QString word);
-    void setRadius(double num);
-    void setMass(double num);
+    void setRadius(int num);
+    void setMass(int num);
     void setColor(QColor color);
     void setFixedPosition(bool fixed);
     void setShowPath(bool show);
     void setShowVelocityCurve(bool show);
     void setVx(double num);
     void setVy(double num);
-    void setXNumbers(double num);
+    void setXNumbers(int num);
     void setShownDataPoints(int num);
 
     QString getName();
-    double getRadius();
-    double getMass();
+    int getRadius();
+    int getMass();
     QColor getColor();
     bool getFixedPosition();
     bool getShowPath();
     bool getShowVelocityCurve();
     double getVx();
     double getVy();
-    double getXNumbers();
+    int getXNumbers();
     int getShownDataPoints();
 
 protected:
@@ -44,8 +44,8 @@ protected:
 
 private:
     QString name;
-    double radius;
-    double mass;
+    int radius;
+    int mass;
     QColor color;
     double Vx;
     double Vy;

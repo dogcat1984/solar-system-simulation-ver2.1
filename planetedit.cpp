@@ -6,7 +6,7 @@ PlanetEdit::PlanetEdit(QWidget *parent) :
     ui(new Ui::PlanetEdit)
 {
     ui->setupUi(this);
-    setFixedWidth(261);
+    setFixedWidth(378);
     setFixedHeight(518);
     myColor = Qt::yellow;
     setColorButtonColor(myColor);

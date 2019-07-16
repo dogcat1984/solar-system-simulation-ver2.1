@@ -17,7 +17,7 @@ class MyScene : public QGraphicsScene
     Q_OBJECT
 
 public:
-    explicit MyScene(QObject *parent = 0);
+    explicit MyScene(QObject *parent = nullptr);
     void calculate(BasicSettingsData *settings);
     QVector<double> transferData();
     void setRunningTimeToZero();
@@ -33,7 +33,7 @@ public slots:
     void toDeleteItem();
 
 signals:
-    toTransferData(QVector<double> );
+    void toTransferData(QVector<double> );
 
 private:
     QGraphicsItem *tempSelectedItem;

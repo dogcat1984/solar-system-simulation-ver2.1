@@ -10,7 +10,7 @@ class MyView : public QGraphicsView
 {
     Q_OBJECT
 public:
-    explicit MyView(QWidget *parent = 0);
+    explicit MyView(QWidget *parent = nullptr);
 
 public slots:
     void setMyDragMode(bool ok);

@@ -15,7 +15,7 @@ class chartPanel : public QWidget
     Q_OBJECT
 
 public:
-    explicit chartPanel(QWidget *parent = 0);
+    explicit chartPanel(QWidget *parent = nullptr);
     ~chartPanel();
 
     void addChart(Planet *p);
@@ -25,7 +25,7 @@ public:
 
 private:
     Ui::chartPanel *ui;
-    QVBoxLayout layout;
+    QVBoxLayout *layout;
     QList <myChart *> list;
 };
 

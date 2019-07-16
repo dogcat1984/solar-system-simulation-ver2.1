@@ -17,7 +17,7 @@ class PlanetEdit : public QDialog
     Q_OBJECT
 
 public:
-    explicit PlanetEdit(QWidget *parent = 0);
+    explicit PlanetEdit(QWidget *parent = nullptr);
     ~PlanetEdit();
     void setPlanet(Planet *temp);
     void setValue();

@@ -6,7 +6,8 @@ chartPanel::chartPanel(QWidget *parent) :
     ui(new Ui::chartPanel)
 {
     ui->setupUi(this);
-    setLayout(&layout);
+    layout = new QVBoxLayout(this);
+    setLayout(layout);
 }
 
 chartPanel::~chartPanel()
@@ -31,7 +32,7 @@ void chartPanel::addChart(Planet *p)
 
 void chartPanel::layOutChart(myChart *p)
 {
-    layout.addWidget(p);
+    layout->addWidget(p);
     setFixedHeight(p->geometry().height()*list.count());
 }
 
@@ -48,7 +49,7 @@ void chartPanel::addData(QVector<double> data)
 void chartPanel::removeLayout()
 {
     while(!list.isEmpty()){
-        layout.removeWidget(list.first());
+        layout->removeWidget(list.first());
         list.first()->deleteLater();
         list.removeFirst();
     }

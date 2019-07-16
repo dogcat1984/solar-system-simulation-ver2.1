@@ -46,19 +46,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::creatToolBar()
 {
-       QAction *newFile = new QAction("New", this);
+       newFile = new QAction("New", this);
        actionList<<newFile;
        actionList.at(0)->setIcon(QIcon(":/icon/newIcon"));
        actionList.at(0)->setToolTip("Creat a new file");
        connect(actionList.at(0), SIGNAL(triggered(bool)), this, SLOT(creatNewFile()));
 
-       QAction *openFile = new QAction("Open", this);
+       openFile = new QAction("Open", this);
        actionList<<openFile;
        actionList.at(1)->setIcon(QIcon(":/icon/openIcon"));
        actionList.at(1)->setToolTip("Open a file");
        connect(actionList.at(1), SIGNAL(triggered(bool)), this, SLOT(readFromFile()));
 
-       QAction *saveFile = new QAction("Save", this);
+       saveFile = new QAction("Save", this);
        actionList<<saveFile;
        actionList.at(2)->setIcon(QIcon(":/icon/saveIcon"));
        actionList.at(2)->setToolTip("Save current file");
@@ -483,7 +483,7 @@ void MainWindow::readFromFile()
             double ppy = temppy.toDouble();
             double pvx = tempvx.toDouble();
             double pvy = tempvy.toDouble();
-            double pXN = tempXN.toDouble();
+            int pXN = tempXN.toInt();
             int pSDP = tempSDP.toInt();
 
             Planet *tempPlanet = new Planet;

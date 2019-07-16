@@ -13,7 +13,7 @@ class BasicSettings : public QDialog
     Q_OBJECT
 
 public:
-    explicit BasicSettings(QWidget *parent = 0);
+    explicit BasicSettings(QWidget *parent = nullptr);
     ~BasicSettings();
     void readSettings(BasicSettingsData *settings);
     void changeSettings(BasicSettingsData *settings);

@@ -26,8 +26,11 @@ myChart::myChart(QWidget *parent) :
     y = new QValueAxis;
     x->setRange(0,xNumbers);
     y->applyNiceNumbers();
-    chart->setAxisX(x, mySeries);
-    chart->setAxisY(y, mySeries);
+    chart->addAxis(x,Qt::AlignBottom);
+    chart->addAxis(y,Qt::AlignLeft);
+    mySeries->attachAxis(x);
+    mySeries->attachAxis(y);
+
     view->setChart(chart);
     layout->addWidget(view);
 //    view->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
@@ -43,6 +46,9 @@ myChart::~myChart()
 {
     delete ui;
     delete chart;
+    delete mySeries;
+    delete x;
+    delete y;
 }
 
 void myChart::setTitle(QString str)
@@ -68,12 +74,12 @@ void myChart::addData(double t, double data)
 
 void myChart::setXText(QString str)
 {
-    chart->axisX()->setTitleText(str);
+    chart->axes(Qt::Horizontal).first()->setTitleText(str);
 }
 
 void myChart::setYText(QString str)
 {
-    chart->axisY()->setTitleText(str);
+    chart->axes(Qt::Vertical).first()->setTitleText(str);
 }
 
 void myChart::initialYRange(double num)
@@ -91,7 +97,7 @@ void myChart::setYNumbers(double num)
     y->setRange(0.999999*num, 1.000001*num);
 }
 
-void myChart::setMaxDataPoint(double num)
+void myChart::setMaxDataPoint(int num)
 {
     maxDataPoints = num;
 }
@@ -106,7 +112,7 @@ void myChart::setYRange()
 
 void myChart::setXRange()
 {
-    double temp = QInputDialog::getInt(this, "Please input X range", "X range", x->max()-x->min());
+    double temp = QInputDialog::getDouble(this, "Please input X range", "X range", x->max()-x->min());
     double xFirst = mySeries->at(0).x();
     double xLast = mySeries->at(mySeries->count()-1).x();
     if(xFirst + temp > xLast)
@@ -147,7 +153,7 @@ void myChart::creatAction()
 void myChart::creatContextMenu()
 {
     addAction(changeXRange);
-    addAction(changeYRange);    
+    addAction(changeYRange);
     addAction(changeShownData);
     setContextMenuPolicy(Qt::ActionsContextMenu);
 }

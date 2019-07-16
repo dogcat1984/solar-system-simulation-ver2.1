@@ -36,7 +36,7 @@ void Planet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     }
     else {
         painter->setBrush(colorBrush);
-    }  
+    }
 
     if(isSelected()){
         QBrush selectedBrush(Qt::blue);
@@ -87,12 +87,12 @@ void Planet::setName(QString word)
     name = word;
 }
 
-void Planet::setRadius(double num)
+void Planet::setRadius(int num)
 {
     radius = num;
 }
 
-void Planet::setMass(double num)
+void Planet::setMass(int num)
 {
     mass = num;
 }
@@ -127,7 +127,7 @@ void Planet::setVy(double num)
     Vy = num;
 }
 
-void Planet::setXNumbers(double num)
+void Planet::setXNumbers(int num)
 {
     xNumbers = num;
 }
@@ -142,12 +142,12 @@ QString Planet::getName()
     return name;
 }
 
-double Planet::getRadius()
+int Planet::getRadius()
 {
     return radius;
 }
 
-double Planet::getMass()
+int Planet::getMass()
 {
     return mass;
 }
@@ -182,7 +182,7 @@ double Planet::getVy()
     return Vy;
 }
 
-double Planet::getXNumbers()
+int Planet::getXNumbers()
 {
     return xNumbers;
 }

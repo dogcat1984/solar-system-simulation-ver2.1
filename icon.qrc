@@ -1,21 +1,21 @@
 <RCC>
     <qresource prefix="/icon">
-        <file alias="openIcon">打开.png</file>
-        <file alias="saveIcon">保存.png</file>
-        <file alias="startIcon">开始.png</file>
-        <file alias="pauseIcon">暂停.png</file>
-        <file alias="zoomInIcon">放大.png</file>
-        <file alias="zoomOutIcon">缩小.png</file>
-        <file alias="newIcon">新建.png</file>
-        <file alias="addPlanetIcon">增加.jpg</file>
-        <file alias="deletePlanetIcon">减少.jpg</file>
-        <file alias="saveAsIcon">另存为.png</file>
-        <file alias="mainIcon">主程序.jpg</file>
-        <file alias="dragIcon">拖动.png</file>
-        <file alias="selectIcon">框选.png</file>
-        <file alias="editIcon">编辑.png</file>
-        <file alias="sceneColorIcon">颜色.png</file>
-        <file alias="centerIcon">中心.png</file>
-        <file alias="settingIcon">设置.png</file>
+        <file alias="openIcon">open.png</file>
+        <file alias="saveIcon">save.png</file>
+        <file alias="startIcon">start.png</file>
+        <file alias="pauseIcon">pause.png</file>
+        <file alias="zoomInIcon">zoomIn.png</file>
+        <file alias="zoomOutIcon">zoomOut.png</file>
+        <file alias="newIcon">new.png</file>
+        <file alias="addPlanetIcon">add.jpg</file>
+        <file alias="deletePlanetIcon">decrease.jpg</file>
+        <file alias="saveAsIcon">save as.png</file>
+        <file alias="mainIcon">main.jpg</file>
+        <file alias="dragIcon">drag.png</file>
+        <file alias="selectIcon">select.png</file>
+        <file alias="editIcon">edit.png</file>
+        <file alias="sceneColorIcon">color.png</file>
+        <file alias="centerIcon">center.png</file>
+        <file alias="settingIcon">setting.png</file>
     </qresource>
 </RCC>

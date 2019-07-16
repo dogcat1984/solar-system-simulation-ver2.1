@@ -15,7 +15,7 @@ class myChart : public QWidget
     Q_OBJECT
 
 public:
-    explicit myChart(QWidget *parent = 0);
+    explicit myChart(QWidget *parent = nullptr);
     ~myChart();
 
     void setTitle(QString str);
@@ -26,7 +26,7 @@ public:
 
     void setXNumbers(double num);
     void setYNumbers(double num);
-    void setMaxDataPoint(double num);
+    void setMaxDataPoint(int num);
 
 private slots:
     void setYRange();
